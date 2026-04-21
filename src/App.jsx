@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MdEmail } from "react-icons/md";
+import { MdEmail, MdPhone } from "react-icons/md";
 
 <MdEmail />
 
@@ -38,7 +38,13 @@ const tools = {
     { name: "Google Analytics", icon: "https://cdn.simpleicons.org/googleanalytics" },
     { name: "SEMrush",          icon: "https://cdn.simpleicons.org/semrush" },
     { name: "Ahrefs",           icon: "https://cdn.simpleicons.org/ahrefs" },
+    { name: "SEO Expert",       icon: "https://cdn.simpleicons.org/seo" },
+    { name: "WordPress",        icon: "https://cdn.simpleicons.org/wordpress" },
+    { name: "n8n",              icon: "https://cdn.simpleicons.org/n8n" },
     { name: "Zapier",           icon: "https://cdn.simpleicons.org/zapier" },
+    { name: "OpenAI",           icon: "https://cdn.simpleicons.org/openai" },
+    { name: "Gemini",           icon: "https://cdn.simpleicons.org/google" },
+    { name: "Claude",           icon: "https://cdn.simpleicons.org/anthropic" },
     { name: "Mailchimp",        icon: "https://cdn.simpleicons.org/mailchimp" },
   ],
   customer: [
@@ -68,6 +74,29 @@ const experience = [
   { period:"Aug 2022 – Dec 2023",role:"Customer Care Representative",     company:"One Nation Energy Platform",            location:"", tags:["Google Workspace","Customer Feedback","Live Chat"] },
   { period:"Jul 2021 – Jun 2022",role:"Virtual Assistant",                company:"DAC's Communication",                   location:"", tags:["Scheduling","Reports","Admin Support"] },
   { period:"Jul 2021 – Jul 2022",role:"Chemistry Teacher",                company:"Govt. Day Secondary School, Taraba State",location:"", tags:["Curriculum","Assessment","Student Engagement"] },
+];
+
+const projects = [
+  {
+    title: "Blog Post Social Media Automation",
+    desc: "Developed an n8n workflow that monitors RSS feeds, generates AI-powered social media posts, and automatically publishes to LinkedIn and Facebook with custom images.",
+    tags: ["n8n", "Automation", "AI", "Social Media", "RSS"],
+  },
+  {
+    title: "Blog Generation & Posting Automation",
+    desc: "End-to-end automated blog content creation system using AI for writing, image generation, SEO optimization, and WordPress publishing with scheduled workflows.",
+    tags: ["n8n", "OpenAI", "WordPress", "Automation", "AI", "SEO"],
+  },
+  {
+    title: "Social Media Management",
+    desc: "Comprehensive social media management for @rccgjethfamily across Facebook, Instagram, and YouTube, including content strategy, community engagement, and multi-platform growth optimization.",
+    tags: ["Social Media Management", "Content Strategy"],
+  },
+  {
+    title: "SEO & Growth Audit",
+    desc: "Comprehensive search and content review that identifies optimization wins, conversion improvements, and a roadmap for audience growth.",
+    tags: ["SEO", "Analytics", "Content Strategy"],
+  },
 ];
 
 const WA = () => (
@@ -179,18 +208,26 @@ export default function Portfolio() {
           font-size:10px; font-weight:700; color:#fff;
           letter-spacing:.06em; font-family:'Plus Jakarta Sans',sans-serif;
         }
-        .nav-links { display:flex; align-items:center; gap:36px; }
-        .nav-links a { font-size:14px; font-weight:500; color:#9ca3af; transition:color .2s; }
+        .nav-links { display:flex; align-items:center; gap:18px; flex-wrap:wrap; justify-content:flex-end; }
+        .nav-links a { font-size:14px; font-weight:500; color:#9ca3af; transition:color .2s; white-space:nowrap; }
         .nav-links a:hover { color:#f3f4f6; }
-        .btn-wa {
-          display:inline-flex; align-items:center; gap:7px;
-          background:linear-gradient(135deg,#25D366,#128C7E); color:#fff;
+        .btn-wa,
+        .btn-email {
+          display:inline-flex; align-items:center; gap:8px;
           border-radius:999px; padding:10px 22px; font-size:14px; font-weight:600;
           border:none; cursor:pointer; font-family:'Plus Jakarta Sans',sans-serif;
-          box-shadow:0 3px 18px rgba(37,211,102,.28);
           transition:transform .2s, box-shadow .2s;
         }
+        .btn-wa {
+          background:linear-gradient(135deg,#25D366,#128C7E); color:#fff;
+          box-shadow:0 3px 18px rgba(37,211,102,.28);
+        }
+        .btn-email {
+          background:linear-gradient(135deg,#D93025,#EA4335); color:#fff;
+          box-shadow:0 4px 20px rgba(233,67,53,.28);
+        }
         .btn-wa:hover { transform:translateY(-2px); box-shadow:0 6px 28px rgba(37,211,102,.45); }
+        .btn-email:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(233,67,53,.38); }
 
         /* hamburger */
         .hbg {
@@ -208,7 +245,7 @@ export default function Portfolio() {
           padding:20px 36px 30px; gap:18px;
         }
         .mob-menu.open { display:flex; }
-        .mob-menu a { font-size:17px; font-weight:500; color:#d1d5db; transition:color .2s; }
+        .mob-menu a { font-size:17px; font-weight:500; color:#d1d5db; transition:color .2s; padding:10px 0; }
         .mob-menu a:hover { color:#fff; }
 
         /* ── HERO ── */
@@ -349,6 +386,13 @@ export default function Portfolio() {
         /* ── FULL TOOLS ── */
         .tgrid { display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
         .tcard { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); border-radius:18px; padding:26px; }
+        .proj-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:22px; margin-top:16px; }
+        .proj-card { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); border-radius:18px; padding:26px; transition:transform .3s; }
+        .proj-card:hover { transform:translateY(-3px); }
+        .proj-title { font-family:'Syne',sans-serif; font-size:18px; font-weight:700; color:#f3f4f6; margin-bottom:10px; }
+        .proj-desc  { color:#9ca3af; font-size:14px; line-height:1.75; margin-bottom:16px; }
+        .proj-tags  { display:flex; flex-wrap:wrap; gap:8px; }
+        .proj-tag   { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); border-radius:8px; padding:6px 12px; font-size:12px; color:#d1d5db; }
         .thd   { display:flex; align-items:center; gap:10px; margin-bottom:18px; }
         .thl   { font-family:'Syne',sans-serif; font-weight:700; font-size:14px; }
 
@@ -371,6 +415,23 @@ export default function Portfolio() {
           box-shadow:0 4px 20px rgba(10,102,194,.35); transition:all .25s;
         }
         .btn-li:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(10,102,194,.5); }
+        .btn-email {
+          display:inline-flex; align-items:center; gap:8px;
+          padding:15px 32px; border-radius:999px; font-weight:600; font-size:16px;
+          font-family:'Plus Jakarta Sans',sans-serif; cursor:pointer; border:none;
+          background:linear-gradient(135deg,#D93025,#EA4335);
+          color:#fff;
+          box-shadow:0 4px 20px rgba(233,67,53,.28); transition:all .25s;
+        }
+        .btn-email:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(233,67,53,.38); }
+        .btn-call {
+          display:inline-flex; align-items:center; gap:8px;
+          padding:15px 32px; border-radius:999px; font-weight:600; font-size:16px;
+          font-family:'Plus Jakarta Sans',sans-serif; cursor:pointer; border:none;
+          background:#f59e0b; color:#070a0f;
+          box-shadow:0 4px 20px rgba(245,158,11,.28); transition:all .25s;
+        }
+        .btn-call:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(245,158,11,.38); }
 
         /* ── FOOTER ── */
         .foot     { border-top:1px solid rgba(255,255,255,.06); padding:28px 0; }
@@ -420,12 +481,23 @@ export default function Portfolio() {
             <div className="nav-links">
               <a href="#services">Services</a>
               <a href="#experience">Experience</a>
+              <a href="#projects">Projects</a>
               <a href="#tools">Tools</a>
               <a href="#about">About</a>
               <a 
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=ezeasogudoris@gmail.com"
                     target="_blank"
-                    className="btn-wa flex items-center gap-2"> <MdEmail /> Contact Me</a>
+                    rel="noreferrer"
+                    className="btn-email flex items-center gap-2">
+                  <MdEmail /> Contact Me
+              </a>
+              <a 
+                    href="https://wa.me/2349066201117"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-wa flex items-center gap-2">
+                <WA /> WhatsApp
+              </a>
             </div>
 
             <button className="hbg" onClick={() => setMenu(o => !o)} aria-label="Menu">
@@ -436,11 +508,17 @@ export default function Portfolio() {
           </div>
 
           <div className={`mob-menu${menu ? " open" : ""}`}>
-            {["services", "experience", "tools", "about"].map(s => (
+            {["services", "experience", "projects", "tools", "about"].map(s => (
               <a key={s} href={`#${s}`} onClick={() => setMenu(false)}>
                 {s.charAt(0).toUpperCase() + s.slice(1)}
               </a>
             ))}
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ezeasogudoris@gmail.com" target="_blank" rel="noreferrer" onClick={() => setMenu(false)}>
+              Contact Me
+            </a>
+            <a href="https://wa.me/2349066201117" target="_blank" rel="noreferrer" onClick={() => setMenu(false)}>
+              WhatsApp
+            </a>
           </div>
         </nav>
 
@@ -589,6 +667,26 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* ── PROJECTS ── */}
+        <section id="projects" className="sec">
+          <div className="wrap">
+            <p className="sec-lbl" style={{ color:"#fbbf24" }}>Featured Work</p>
+            <h2 className="sec-h">Recent Projects</h2>
+            <p className="sec-p">Selected engagements that showcase results-driven solutions.</p>
+            <div className="proj-grid">
+              {projects.map((project, index) => (
+                <div key={index} className="proj-card">
+                  <div className="proj-title">{project.title}</div>
+                  <div className="proj-desc">{project.desc}</div>
+                  <div className="proj-tags">
+                    {project.tags.map(tag => <span key={tag} className="proj-tag">{tag}</span>)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── FULL TOOLS ── */}
         <section id="tools" className="sec">
           <div className="wrap">
@@ -621,7 +719,7 @@ export default function Portfolio() {
                 "My mission is to bridge education, technology, and service excellence helping individuals and organizations thrive in today's interconnected world."
               </blockquote>
               <p style={{ color:"#9ca3af", lineHeight:1.85, fontSize:15 }}>
-                Based Nigeria, I am an adaptable professional with a global perspective, combining expertise in education, administration, and digital communication.
+                Based in Nigeria, I am an adaptable professional with a global perspective, combining expertise in education, administration, and digital communication.
                 I help institutions and learners navigate opportunities across borders while also building digital presence and streamlining operations for the businesses that serve them.
                 With a background spanning chemistry education, international consultancy, customer success, and digital marketing, I bring both depth and breadth to every role.
               </p>
@@ -639,9 +737,22 @@ export default function Portfolio() {
               <a 
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=ezeasogudoris@gmail.com"
                     target="_blank"
-                    className="btn-wa flex items-center gap-2"> <MdEmail /> Contact Me</a>
+                    rel="noreferrer"
+                    className="btn-email flex items-center gap-2">
+                <MdEmail /> Contact Me
+              </a>
+              <a 
+                    href="https://wa.me/2349066201117"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-wa flex items-center gap-2">
+               <WA /> WhatsApp
+              </a>
+              <a href="tel:+2349066201117" className="btn-call flex items-center gap-2">
+                <MdPhone /> Call +234 906 620 1117
+              </a>
               <a href="https://www.linkedin.com/in/dorischidinma" target="_blank" rel="noreferrer" className="btn-li">
-                <LI /> View LinkedIn Profile
+                <LI /> LinkedIn
               </a>
             </div>
           </div>
