@@ -485,13 +485,6 @@ export default function Portfolio() {
               <a href="#tools">Tools</a>
               <a href="#about">About</a>
               <a 
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=ezeasogudoris@gmail.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn-email flex items-center gap-2">
-                  <MdEmail /> Contact Me
-              </a>
-              <a 
                     href="https://wa.me/2349066201117"
                     target="_blank"
                     rel="noreferrer"
