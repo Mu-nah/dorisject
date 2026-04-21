@@ -621,7 +621,7 @@ export default function Portfolio() {
                 "My mission is to bridge education, technology, and service excellence helping individuals and organizations thrive in today's interconnected world."
               </blockquote>
               <p style={{ color:"#9ca3af", lineHeight:1.85, fontSize:15 }}>
-                Based Nigeria, I am an adaptable professional with a global perspective, combining expertise in education, administration, and digital communication.
+                Based in Nigeria, I am an adaptable professional with a global perspective, combining expertise in education, administration, and digital communication.
                 I help institutions and learners navigate opportunities across borders while also building digital presence and streamlining operations for the businesses that serve them.
                 With a background spanning chemistry education, international consultancy, customer success, and digital marketing, I bring both depth and breadth to every role.
               </p>
