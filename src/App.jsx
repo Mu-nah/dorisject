@@ -360,7 +360,7 @@ export default function Portfolio() {
         .img-wrap  { position:relative; border-radius:28px; }
         .img-ring  { position:absolute; inset:-2px; border-radius:30px; background:linear-gradient(135deg,#38bdf8,#818cf8,#34d399); z-index:0; }
         .img-box   { position:relative; border-radius:28px; overflow:hidden; background:#111827; z-index:1; }
-        .img-box img { width:100%; display:block; aspect-ratio:4/5; object-fit:cover; object-position:center center; }
+        .img-box img { width:100%; display:block; aspect-ratio:4/5; object-fit:cover; object-position:top center; }
         .img-fb  {
           width:100%; aspect-ratio:4/5;
           display:flex; flex-direction:column; align-items:center; justify-content:center;
